@@ -26,6 +26,7 @@ Anciennement « Banc Moteur ». État d'avancement et prochaines étapes : `stat
   - boucles par défaut générées par `synthLoop` : longueur = nombre entier de cycles moteur, pour un bouclage sans clic.
 - **Import** : `on_<rpm>.wav` / `off_<rpm>.wav` vont dans la banque du moteur courant ; `pschitt|psh|bov*`, `flutter*`, `pop*` vont dans `fxS` et remplacent la synthèse pour tous les moteurs. Rien n'est conservé au rechargement.
 - **Interface** : choix du moteur dans un panneau à onglets (`openSheet`, `renderEngines`). Turbo et Dump valve sont des sélecteurs segmentés (`.seg` + input caché) réinitialisés sur la config d'origine à chaque changement de moteur (`applyEngineDefaults`, point ambre = d'origine). Seuls le moteur et la boîte sont mémorisés en localStorage.
+- **Écran large** (≥ 900 px, ordinateur ou écran de voiture en paysage) : deux colonnes, `.drive` (compteur, pédales) à gauche, `.side` (moteur, réglages, banque) à droite ; le panneau moteur devient une fenêtre centrée. Clavier : W/S ou ↑/↓ pour les pédales, Q/E ou ←/→ pour les rapports ; raccourcis affichés sur les pédales seulement avec une souris.
 - **iOS** : `unlockIOS` force la session audio en lecture pour passer outre le bouton silencieux.
 
 ## Règles

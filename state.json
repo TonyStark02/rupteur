@@ -16,6 +16,7 @@
     "Import : on_/off_<rpm>.wav par moteur ; pschitt, flutter, pop* communs",
     "Interface : panneau de choix moteur à onglets, sélecteurs segmentés réglés sur la config d'origine",
     "Contournement du bouton silencieux iOS",
+    "Mise en page deux colonnes sur écran large, fenêtre de choix moteur centrée, flèches du clavier",
     "Nom Rupteur, logo, icône écran d'accueil",
     "Dépôt : README, LICENSE MIT, guide samples, workflow GitHub Pages"
   ],
