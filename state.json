@@ -1,0 +1,36 @@
+{
+  "project": "rupteur",
+  "updated": "2026-10-10",
+  "version": "0.9.0",
+  "status": "prototype jouable, pas encore testé en roulant",
+  "scope": {
+    "in": ["moteur à samples", "mode Test", "mode GPS", "boîte auto/manuelle", "frein moteur", "turbo, compresseur, dump valve", "pétarades", "import de boucles et d'effets"],
+    "out": ["paiement", "scènes et ambiances", "marques constructeurs"]
+  },
+  "done": [
+    "Moteur à samples : fondu à puissance constante entre régimes, mélange en charge / pied levé, recalage par playbackRate",
+    "16 profils moteur groupés par origine, chacun avec sa banque, sa zone rouge, ses rapports et sa config turbo d'origine",
+    "Physique : frein moteur (≈1,6 m/s² en 3e à 100 km/h), montée à vide 800→6000 en 0,4 s, rupteur, patinage d'embrayage, sursaut au coup de pédale",
+    "Turbo avec inertie et pression piégée ; dump valve pschitt ou flutter au lever, aux passages et aux levers partiels",
+    "Pétarades irrégulières sur bus d'effets séparé",
+    "Import : on_/off_<rpm>.wav par moteur ; pschitt, flutter, pop* communs",
+    "Interface : panneau de choix moteur à onglets, sélecteurs segmentés réglés sur la config d'origine",
+    "Contournement du bouton silencieux iOS",
+    "Nom Rupteur, logo, icône écran d'accueil",
+    "Dépôt : README, LICENSE MIT, guide samples, workflow GitHub Pages"
+  ],
+  "next": [
+    "Publier sur GitHub Pages et tester dans la Tesla : latence GPS, lecture audio en roulant",
+    "Obtenir de vrais samples par moteur (enregistrement à régime stabilisé ou pack sous licence)",
+    "Outil de découpe : trouver des points de bouclage sur des cycles moteur entiers",
+    "Conserver les samples importés (IndexedDB) pour ne pas les réimporter à chaque visite",
+    "Affiner pschitt et flutter, ou les remplacer par des enregistrements"
+  ],
+  "decisions": {
+    "nom": "Rupteur",
+    "son": "samples réalistes avec crossfade ; la synthèse ne sert que de remplacement provisoire",
+    "profils": "noms génériques par architecture, pas de marques",
+    "hébergement": "GitHub Pages (HTTPS obligatoire pour le GPS)",
+    "licence": "MIT"
+  }
+}

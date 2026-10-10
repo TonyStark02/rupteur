@@ -1,0 +1,601 @@
+<title>Rupteur</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8dGl0bGU+UnVwdGV1cjwvdGl0bGU+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMTIiIGZpbGw9IiMxMDEzMTgiLz4KICA8IS0tIGNhZHJhbiA6IDI3MMKwIG91dmVydCBlbiBiYXMgLS0+CiAgPHBhdGggZD0iTTE0Ni45IDM2NS4xIEExNTQgMTU0IDAgMSAxIDM2NS4xIDM2NS4xIiBmaWxsPSJub25lIiBzdHJva2U9IiMyNjJjMzYiIHN0cm9rZS13aWR0aD0iMzQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDwhLS0gbW9udMOpZSBlbiByw6lnaW1lIC0tPgogIDxwYXRoIGQ9Ik0xNDYuOSAzNjUuMSBBMTU0IDE1NCAwIDAgMSAzMzMgMTIyLjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YyYTMzYSIgc3Ryb2tlLXdpZHRoPSIzNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPCEtLSB6b25lIHJvdWdlIC0tPgogIDxwYXRoIGQ9Ik0zODkuNCAxNzkgQTE1NCAxNTQgMCAwIDEgMzY1LjEgMzY1LjEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U1NDg0ZCIgc3Ryb2tlLXdpZHRoPSIzNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPCEtLSBhaWd1aWxsZSBjYWzDqWUgc3VyIGxlIHJ1cHRldXIgLS0+CiAgPHBhdGggZD0iTTI1NiAyNTYgTDM5MiAxOTYiIHN0cm9rZT0iI2YyYTMzYSIgc3Ryb2tlLXdpZHRoPSIyMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIzNCIgZmlsbD0iI2YyYTMzYSIvPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMTIiIGZpbGw9IiMxMDEzMTgiLz4KPC9zdmc+Cg==">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<meta name="apple-mobile-web-app-title" content="Rupteur">
+<meta name="theme-color" content="#101318">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout : tableau de bord d'une colonne, compteur en tête, commandes de conduite au pouce en bas, banque de samples repliée */
+:root{
+  --bg:#101318; --panel:#171b22; --line:#262c36; --fg:#e7e9ec; --muted:#8a93a1;
+  --amber:#f2a33a; --red:#e5484d; --ok:#46a758;
+  --display:"Saira Condensed","Arial Narrow",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+html,body{background:var(--bg);color:var(--fg)}
+body{font-family:var(--mono);padding-inline:16px;padding-block:16px 32px;max-width:560px;margin:0 auto;-webkit-user-select:none;user-select:none}
+h1{font-family:var(--display);font-weight:800;font-size:1.6rem;letter-spacing:.04em;text-transform:uppercase;margin:0}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{width:36px;height:36px;flex:none}
+header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.status{font-size:.75rem;color:var(--muted)}
+.status b{color:var(--fg);font-weight:500}
+.engBtn{display:grid;grid-template-columns:1fr auto;grid-template-areas:"lbl chev" "name chev" "sub sub";gap:2px 12px;text-align:left;width:100%;margin-top:16px;padding:12px 14px;border-radius:10px}
+.engLbl{grid-area:lbl;font-size:.65rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+#engName{grid-area:name;font-family:var(--display);font-weight:800;font-size:1.7rem;line-height:1.05;letter-spacing:.02em;color:var(--amber)}
+.engBtn .profSub{grid-area:sub;margin:6px 0 0;line-height:1.5}
+.chev{grid-area:chev;align-self:center;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:6px 10px}
+.engBtn:hover .chev{border-color:var(--amber)}
+.sheet{position:fixed;inset:0;z-index:20}
+.scrim{position:absolute;inset:0;background:rgba(5,7,10,.62)}
+.panel{position:absolute;left:0;right:0;bottom:0;max-width:560px;margin:0 auto;max-height:82%;display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-bottom:0;border-radius:16px 16px 0 0;padding:8px 16px calc(12px + env(safe-area-inset-bottom,0px));animation:up .22s ease-out}
+@keyframes up{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+.grab{width:40px;height:4px;border-radius:2px;background:var(--line);margin:0 auto 10px}
+.sheetHead{flex:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.sheetHead h2{font-family:var(--display);font-weight:800;font-size:1.3rem;letter-spacing:.04em;text-transform:uppercase;margin:0}
+.close{padding:8px 12px;font-size:.8rem}
+.tabs{flex:none;display:flex;gap:6px;overflow-x:auto;padding-block:12px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;padding:8px 12px;border-radius:999px;font-size:.78rem;background:transparent}
+.tab[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.list{overflow-y:auto;display:grid;gap:4px;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+.grp{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:10px 2px 4px}
+.eng{display:grid;grid-template-columns:3.2rem 1fr auto;align-items:center;gap:12px;text-align:left;padding:10px 12px;border-radius:8px;background:var(--bg)}
+.eng .cyl{font-family:var(--display);font-weight:800;font-size:1.25rem;color:var(--muted);text-align:center;line-height:1}
+.eng .cyl small{display:block;font-family:var(--mono);font-weight:400;font-size:.55rem;letter-spacing:.08em;margin-top:2px}
+.eng .nm{min-width:0}
+.eng .nm b{display:block;font-family:var(--display);font-weight:700;font-size:1.15rem;letter-spacing:.02em}
+.eng .nm span{display:block;font-size:.7rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eng .rl{font-size:.7rem;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.eng .rl i{display:block;font-style:normal;color:var(--amber);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;margin-top:3px}
+.eng[aria-current="true"]{border-color:var(--amber)}
+.eng[aria-current="true"] .nm b,.eng[aria-current="true"] .cyl{color:var(--amber)}
+.segrow{display:grid;gap:6px}
+.segrow>span{font-size:.8rem;color:var(--muted)}
+.seg{display:flex;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:3px;gap:3px;min-width:0}
+.seg button{flex:1;min-width:0;padding:8px 4px;border:0;border-radius:6px;background:transparent;color:var(--muted);font-size:.75rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.seg button{position:relative}
+.seg button[data-def="true"]::after{content:"";position:absolute;top:5px;right:6px;width:5px;height:5px;border-radius:50%;background:var(--amber)}
+.seg.off button{opacity:.45}
+.seg button[aria-pressed="true"]{background:var(--panel);color:var(--fg);box-shadow:inset 0 0 0 1px var(--amber)}
+.profSub{font-size:.75rem;color:var(--muted);margin:8px 0 0}
+.gauge{position:relative;margin-block:8px}
+canvas#tach{width:100%;aspect-ratio:2/1.15;max-width:100%;display:block}
+.readout{position:absolute;left:0;right:0;bottom:6%;text-align:center}
+.speed{font-family:var(--display);font-weight:700;font-size:4.2rem;line-height:1;font-variant-numeric:tabular-nums}
+.unit{font-size:.75rem;color:var(--muted);letter-spacing:.12em}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
+.stat{border-top:1px solid var(--line);padding-top:6px}
+.stat span{display:block;font-size:.65rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.stat b{font-family:var(--display);font-size:1.5rem;font-weight:700;font-variant-numeric:tabular-nums}
+.gear b{color:var(--amber)}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+button{font:inherit;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 14px;cursor:pointer}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+button.primary{background:var(--amber);color:#1a1205;border-color:var(--amber);font-weight:500;flex:1}
+button.on{border-color:var(--amber);color:var(--amber)}
+.pedals{display:grid;grid-template-columns:1fr 1.4fr;gap:8px;margin-block:12px}
+.pedal{height:84px;font-family:var(--display);font-size:1.3rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;touch-action:none}
+.pedal.down{background:var(--line)}
+#gas.down{background:var(--amber);color:#1a1205}
+#brake.down{background:var(--red);border-color:var(--red)}
+.ctrls{display:grid;gap:12px;margin-block:16px}
+label.sl{display:grid;grid-template-columns:7.5em 1fr 3em;align-items:center;gap:8px;font-size:.8rem;color:var(--muted)}
+label.sl output{text-align:right;color:var(--fg);font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--amber)}
+details{border-top:1px solid var(--line);padding-top:12px;margin-top:8px}
+summary{cursor:pointer;font-family:var(--display);font-weight:700;font-size:1.1rem;letter-spacing:.05em;text-transform:uppercase}
+.bank{display:grid;grid-template-columns:4.5em 1fr 1fr;gap:6px;margin-top:12px;font-size:.75rem;align-items:center}
+.bank .h{color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-size:.65rem}
+.slot{padding:6px 8px;border:1px solid var(--line);border-radius:4px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.slot.user{color:var(--ok);border-color:var(--ok)}
+.slot.live{background:var(--line);color:var(--fg)}
+p.note{font-size:.75rem;color:var(--muted);line-height:1.6;max-width:65ch}
+code{color:var(--fg)}
+.msg{font-size:.75rem;color:var(--amber);min-height:1.2em;margin-top:6px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header>
+  <div class="brand"><svg class="logo" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#101318"/>
+  <path d="M146.9 365.1 A154 154 0 1 1 365.1 365.1" fill="none" stroke="#262c36" stroke-width="34" stroke-linecap="round"/>
+  <path d="M146.9 365.1 A154 154 0 0 1 333 122.6" fill="none" stroke="#f2a33a" stroke-width="34" stroke-linecap="round"/>
+  <path d="M389.4 179 A154 154 0 0 1 365.1 365.1" fill="none" stroke="#e5484d" stroke-width="34" stroke-linecap="round"/>
+  <path d="M256 256 L392 196" stroke="#f2a33a" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="256" cy="256" r="34" fill="#f2a33a"/>
+  <circle cx="256" cy="256" r="12" fill="#101318"/>
+</svg><h1>Rupteur</h1></div>
+  <div class="status">Source <b id="srcLbl">Test</b> · Samples <b id="bankLbl">générés</b></div>
+</header>
+
+<input type="hidden" id="prof">
+<button class="engBtn" id="engBtn" aria-haspopup="dialog" aria-controls="sheet">
+  <span class="engLbl">Moteur</span>
+  <b id="engName">V8 muscle</b>
+  <span class="profSub" id="profSub"></span>
+  <span class="chev" aria-hidden="true">Changer</span>
+</button>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="scrim" id="scrim"></div>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="sheetT">
+    <div class="grab" aria-hidden="true"></div>
+    <div class="sheetHead"><h2 id="sheetT">Choisir un moteur</h2><button class="close" id="sheetClose">Fermer</button></div>
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <div class="list" id="engList"></div>
+  </div>
+</div>
+
+<div class="gauge">
+  <canvas id="tach" width="1000" height="575"></canvas>
+  <div class="readout"><div class="speed" id="spd">0</div><div class="unit">KM/H</div></div>
+</div>
+
+<div class="stats">
+  <div class="stat"><span>Régime</span><b id="rpmV">0</b></div>
+  <div class="stat gear"><span>Rapport</span><b id="gearV">N</b></div>
+  <div class="stat"><span>Charge</span><b id="loadV">0%</b></div>
+  <div class="stat"><span>Accél.</span><b id="accV">0.0</b></div>
+</div>
+
+<div class="row">
+  <button class="primary" id="start">Démarrer le moteur</button>
+  <button id="srcBtn">Passer en GPS</button>
+</div>
+<div class="msg" id="msg"></div>
+
+<div class="pedals">
+  <button class="pedal" id="brake">Frein</button>
+  <button class="pedal" id="gas">Gaz</button>
+</div>
+<p class="note">Clavier : <code>W</code> gaz, <code>S</code> frein. À l'arrêt, le gaz fait monter le régime sans avancer tant que le frein est tenu.</p>
+
+<div class="ctrls">
+  <label class="sl">Volume <input type="range" id="vol" min="0" max="100" value="70"><output>70</output></label>
+  <label class="sl">Agressivité <input type="range" id="aggr" min="0" max="100" value="50"><output>50</output></label>
+  <label class="sl">Pétarades <input type="range" id="crk" min="0" max="100" value="50"><output>50</output></label>
+  <div class="sl segrow"><span>Turbo</span><div class="seg" data-for="turbo"><button data-v="on">Activé</button><button data-v="off">Désactivé</button></div><input type="hidden" id="turbo" value="off"></div>
+  <div class="sl segrow"><span>Dump valve</span><div class="seg" data-for="dv"><button data-v="psh">Pschitt</button><button data-v="flutter">Flutter</button><button data-v="none">Aucune</button></div><input type="hidden" id="dv" value="none"></div>
+  <div class="sl segrow"><span>Boîte</span><div class="seg" data-for="box"><button data-v="auto">Auto</button><button data-v="manual">Manuelle · Q / E</button></div><input type="hidden" id="box" value="auto"></div>
+</div>
+
+<details id="bankDet">
+  <summary>Banque de samples</summary>
+  <p class="note">Le moteur fait un fondu entre des boucles enregistrées à régime fixe, et les accélère ou ralentit pour combler l'écart. Il faut deux jeux : <b>on</b> (pied au plancher, en charge) et <b>off</b> (pied levé, frein moteur). Au départ, la banque contient des boucles générées pour tester. Remplace-les par de vrais enregistrements en important des fichiers nommés <code>on_3000.wav</code>, <code>off_3000.wav</code>, etc. Les régimes sont lus dans le nom.</p>
+  <p class="note">Les effets peuvent aussi venir de vrais enregistrements, valables pour tous les moteurs : <code>pschitt.wav</code>, <code>flutter.wav</code>, et autant de <code>pop1.wav</code>, <code>pop2.wav</code>… que tu veux (une détonation par fichier, tirée au hasard).</p>
+  <div class="row"><button id="impBtn">Importer des boucles</button><button id="resetBtn">Revenir aux boucles générées</button></div>
+  <input type="file" id="imp" accept="audio/*" multiple hidden>
+  <div class="bank" id="bank"></div>
+</details>
+
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+/* ---------- modèle véhicule ---------- */
+/* Profils : cyl = cylindres ; amp = intensité de chaque explosion sur un cycle (irrégulière = glouglou) ;
+   res = résonance d'échappement (Hz) ; decay = amortissement ; noise = souffle ; drive = saturation ; lp = brillance ; power = poussée */
+/* group = origine ; turbo = turbo par défaut ; spool = régime où le turbo commence à souffler ; cam = changement d'arbre à cames (VTEC) */
+const PROFILES=[
+  {id:"muscle",group:"Américains",name:"V8 muscle",sub:"6,2 L vilebrequin croisé, glouglou américain",cyl:8,amp:[1,.5,.95,.45,1,.62,.85,.55],res:68,decay:28,noise:.45,drive:2.4,lp:1300,power:6.2,crk:1.4,
+   idle:720,redline:6200,limiter:6500,final:3.42,gears:[2.97,2.07,1.43,1.0,0.84,0.56]},
+  {id:"v8sc",group:"Américains",name:"V8 compresseur",sub:"6,2 L suralimenté, sifflement du compresseur",cyl:8,amp:[1,.55,.95,.5,1,.65,.85,.58],res:74,decay:30,noise:.5,drive:2.8,lp:1500,power:7.2,crk:1.5,
+   idle:750,redline:6300,limiter:6500,final:3.09,gears:[3.02,2.03,1.34,1.0,0.81,0.67],sc:true},
+  {id:"v8it",group:"Italiens",name:"V8 italien",sub:"vilebrequin plat, aigu et rageur",cyl:8,amp:[1,.9,1,.88,1,.92,1,.9],res:165,decay:55,noise:.6,drive:3.2,lp:2500,power:6.8,crk:1.1,
+   idle:1000,redline:8500,limiter:8800,final:4.1,gears:[3.08,2.19,1.63,1.29,1.03,0.84,0.69]},
+  {id:"v10",group:"Italiens",name:"V10 atmo",sub:"5,2 L, hurlement jusqu'à 8 700 tr/min",cyl:10,amp:[1,.86,.97,.84,1,.9,.95,.85,1,.88],res:190,decay:62,noise:.55,drive:3.3,lp:2800,power:7,crk:1,
+   idle:1000,redline:8500,limiter:8800,final:4.1,gears:[3.13,2.59,1.96,1.6,1.3,1.03,0.84]},
+  {id:"v12",group:"Italiens",name:"V12 italien",sub:"6,5 L, lisse puis métallique",cyl:12,amp:[1,.95,.98,.94,1,.96,.97,.95,1,.94,.98,.96],res:235,decay:72,noise:.38,drive:2.6,lp:3000,power:7.4,crk:.8,
+   idle:900,redline:8700,limiter:8950,final:3.6,gears:[3.08,2.19,1.63,1.29,1.03,0.84,0.69]},
+  {id:"v6",group:"Italiens",name:"V6 biturbo",sub:"3,0 L, rauque et feutré",cyl:6,amp:[1,.78,.95,.75,1,.8],res:120,decay:44,noise:.55,drive:2.6,lp:1900,power:5.6,crk:1.2,
+   idle:780,redline:7000,limiter:7200,final:3.15,gears:[4.17,2.34,1.52,1.14,0.87,0.69],turbo:true,dv:"psh",spool:2500},
+  {id:"l6de",group:"Allemands",name:"6 en ligne atmo",sub:"3,2 L, rond et soyeux jusqu'à 8 000",cyl:6,amp:[1,.96,.98,.95,1,.97],res:185,decay:60,noise:.42,drive:2.4,lp:2600,power:6,crk:.8,
+   idle:850,redline:7900,limiter:8100,final:3.62,gears:[4.23,2.53,1.67,1.23,1.0,0.83]},
+  {id:"l6det",group:"Allemands",name:"6 en ligne turbo",sub:"3,0 L biturbo, grave et feutré, gros couple",cyl:6,amp:[1,.94,.97,.93,1,.95],res:140,decay:50,noise:.5,drive:2.5,lp:1800,power:6.8,crk:1.3,
+   idle:750,redline:7200,limiter:7400,final:3.15,gears:[4.11,2.32,1.54,1.18,1.0,0.85,0.69],turbo:true,dv:"psh",spool:2000},
+  {id:"v8de",group:"Allemands",name:"V8 biturbo",sub:"4,4 L, grondement sourd qui pousse fort",cyl:8,amp:[1,.7,.95,.68,1,.75,.9,.7],res:95,decay:36,noise:.5,drive:2.5,lp:1500,power:7.5,crk:1.3,
+   idle:700,redline:7000,limiter:7200,final:3.15,gears:[5.0,3.2,2.14,1.72,1.31,1.0,0.82,0.64],turbo:true,dv:"none",spool:2200},
+  {id:"v10de",group:"Allemands",name:"V10 haut régime",sub:"5,0 L, montée en régime de moto jusqu'à 8 250",cyl:10,amp:[1,.9,.98,.88,1,.92,.97,.9,1,.91],res:200,decay:64,noise:.5,drive:3,lp:2700,power:6.8,crk:.9,
+   idle:900,redline:8250,limiter:8400,final:3.62,gears:[3.99,2.65,1.81,1.36,1.0,0.82,0.65]},
+  {id:"l5",group:"Allemands",name:"5 cylindres turbo",sub:"2,5 L, chant irrégulier unique",cyl:5,amp:[1,.82,.95,.78,.9],res:130,decay:42,noise:.55,drive:2.8,lp:2000,power:6.2,crk:1.5,
+   idle:800,redline:7000,limiter:7200,final:3.7,gears:[3.56,2.53,1.68,1.02,0.79,0.64],turbo:true,dv:"flutter",spool:2800},
+  {id:"jz",group:"Japonais",name:"6 en ligne biturbo",sub:"3,0 L, lisse en bas, rauque en haut",cyl:6,amp:[1,.95,.98,.94,1,.96],res:160,decay:52,noise:.55,drive:2.7,lp:2200,power:6.4,crk:1.4,
+   idle:800,redline:7000,limiter:7200,final:3.27,gears:[3.83,2.36,1.69,1.31,1.0,0.79],turbo:true,dv:"flutter",spool:3000},
+  {id:"vtec",group:"Japonais",name:"4 cylindres VTEC",sub:"2,0 L, la came aiguë s'enclenche à 5 800",cyl:4,amp:[1,.9,.97,.88],res:150,decay:50,noise:.5,drive:2.6,lp:2400,power:5,crk:.9,
+   idle:900,redline:9000,limiter:9200,final:4.1,gears:[3.27,2.13,1.52,1.15,0.92,0.74],cam:{rpm:5800,res:110,noise:.25,drive:.8}},
+  {id:"rot",group:"Japonais",name:"Rotatif 2 rotors",sub:"1,3 L, braaap rauque et nerveux",cyl:4,layout:"2 rotors",amp:[1,.88,1,.86],res:240,decay:42,noise:.85,drive:3.6,lp:2600,power:5.6,crk:2,
+   idle:1000,redline:8500,limiter:9000,final:4.1,gears:[3.48,2.02,1.39,1.0,0.72],turbo:true,dv:"psh",spool:3500},
+  {id:"boxer4",group:"Japonais",name:"Flat-4 turbo",sub:"2,5 L à plat, grondement irrégulier",cyl:4,amp:[1,.5,.88,.58],res:90,decay:32,noise:.55,drive:2.6,lp:1600,power:6,crk:1.5,
+   idle:800,redline:7000,limiter:7200,final:3.9,gears:[3.64,2.24,1.52,1.13,0.92,0.71],turbo:true,dv:"psh",spool:2800},
+  {id:"flat6",group:"Allemands",name:"Flat-6 atmo",sub:"4,0 L à plat, crissant jusqu'à 9 000",cyl:6,amp:[1,.9,.97,.88,1,.93],res:210,decay:66,noise:.58,drive:3,lp:3000,power:6.4,crk:.9,
+   idle:950,redline:9000,limiter:9200,final:4.2,gears:[3.75,2.38,1.72,1.34,1.11,0.96,0.84]},
+];
+const CAR={wheelCirc:2.0};let P,RPMS=[];
+function rpmList(lim){const r=[1000,1500,2000];for(let x=3000;x<=lim+500;x+=1000)r.push(x);return r}
+function applyProfile(p){P=p;Object.assign(CAR,{idle:p.idle,redline:p.redline,limiter:p.limiter,final:p.final,gears:p.gears});RPMS=rpmList(p.limiter)}
+applyProfile(PROFILES[0]);
+const S={boost:0,kick:0,liftT:9,armed:false,dvCool:0,thrRef:0,src:"test",speed:0,acc:0,rpm:0,gear:0,load:0,throttle:0,gas:false,brake:false,running:false,shiftT:0,limiterT:0,gps:{last:null,v:0,watch:null}};
+function rpmFor(v,g){return v/CAR.wheelCirc*CAR.gears[g]*CAR.final*60}
+
+/* ---------- audio ---------- */
+let ac,master,shaper,lp,crackBus,bank={on:{},off:{}},banks={},voices=[];
+function makeCurve(k){const n=1024,c=new Float32Array(n);for(let i=0;i<n;i++){const x=i/(n-1)*2-1;c[i]=Math.tanh(k*x)/Math.tanh(k)}return c}
+
+// boucle de démonstration : 8 cylindres, allumage irrégulier, longueur = nombre entier de cycles pour un bouclage propre
+function synthLoop(rpm,onLoad){
+  const sr=ac.sampleRate,cyc=120/rpm,nCyc=Math.max(4,Math.round(1.6/cyc)),len=Math.round(nCyc*cyc*sr),d=new Float32Array(len);
+  const cam=P.cam&&rpm>=P.cam.rpm?P.cam:{res:0,noise:0};
+  const N=P.cyl,amp=P.amp,res=P.res+cam.res+rpm*.03,noiseAmt=(P.noise+cam.noise)*(onLoad?1:.5),decay=P.decay*(onLoad?1:1.5);
+  let seed=rpm*7+(onLoad?1:2)+N*131;const rnd=()=>((seed=(seed*16807)%2147483647)/2147483647);
+  for(let c=0;c<nCyc;c++)for(let p=0;p<N;p++){
+    const t0=Math.round((c*cyc+p*cyc/N+(rnd()-.5)*cyc*.012)*sr),a=amp[p]*(.85+rnd()*.3)*(onLoad?1:.55)*(!onLoad&&rnd()<.08?.2:1);
+    const L=Math.round(cyc/N*sr*2.2);
+    for(let i=0;i<L;i++){const idx=(t0+i)%len,t=i/sr,env=Math.exp(-t*decay*(rpm/2000));
+      d[idx]+=a*env*(Math.sin(2*Math.PI*res*t)*.8+Math.sin(2*Math.PI*res*.5*t)*.6+(rnd()*2-1)*noiseAmt)}
+  }
+  let m=0;for(const x of d)m=Math.max(m,Math.abs(x));for(let i=0;i<len;i++)d[i]/=m||1;
+  const b=ac.createBuffer(1,len,sr);b.copyToChannel(d,0);return b;
+}
+function buildDefaultBank(){bank={on:{},off:{}};for(const r of RPMS){bank.on[r]={buf:synthLoop(r,true),user:false};bank.off[r]={buf:synthLoop(r,false),user:false}}banks[P.id]=bank}
+function selectProfile(id){
+  const p=PROFILES.find(x=>x.id===id)||PROFILES[0];applyProfile(p);S.gear=Math.min(S.gear,p.gears.length-1);
+  try{localStorage.setItem("bm.profile",p.id)}catch(e){}
+  $("prof").value=p.id;$("engName").textContent=p.name;
+  applyEngineDefaults(p);
+  $("profSub").textContent=(p.layout||p.cyl+" cylindres")+" · "+p.sub+" · zone rouge "+p.redline.toLocaleString("fr-FR")+" tr/min"+(p.turbo?" · turbo, dump valve "+({psh:"pschitt",flutter:"flutter",none:"silencieuse"})[p.dv||"psh"]:"")+(p.sc?" · compresseur":"");
+  S.boost=0;
+  if(ac){if(banks[p.id])bank=banks[p.id];else buildDefaultBank();startVoices();updateShaper()}else renderBank();
+}
+
+function startVoices(){
+  voices.forEach(v=>{try{v.src.stop()}catch(e){}});voices=[];
+  for(const kind of["on","off"])for(const r of Object.keys(bank[kind]).map(Number).sort((a,b)=>a-b)){
+    const src=ac.createBufferSource();src.buffer=bank[kind][r].buf;src.loop=true;
+    const g=ac.createGain();g.gain.value=0;src.connect(g).connect(lp);src.start();voices.push({kind,rpm:r,src,g});
+  }
+  renderBank();
+}
+function initAudio(){
+  ac=new (window.AudioContext||window.webkitAudioContext)();
+  lp=ac.createBiquadFilter();lp.type="lowpass";lp.Q.value=.7;
+  shaper=ac.createWaveShaper();shaper.oversample="2x";
+  master=ac.createGain();master.gain.value=0;
+  const comp=ac.createDynamicsCompressor();comp.threshold.value=-14;comp.ratio.value=4;
+  // pre : attaque de la saturation, plus forte quand on écrase la pédale
+  pre=ac.createGain();lp.connect(pre).connect(shaper).connect(master).connect(comp).connect(ac.destination);
+  // effets (pétarades, turbo, dump valve) : bus séparé, sans le compresseur du moteur pour garder l'impact
+  fxBus=ac.createGain();fxBus.gain.value=0;
+  const fxLim=ac.createDynamicsCompressor();fxLim.threshold.value=-3;fxLim.ratio.value=12;fxLim.attack.value=.001;
+  fxBus.connect(fxLim).connect(ac.destination);
+  const nl=ac.sampleRate*2;noiseBuf=ac.createBuffer(1,nl,ac.sampleRate);const nd=noiseBuf.getChannelData(0);for(let i=0;i<nl;i++)nd[i]=Math.random()*2-1;
+  // sifflement turbo : sinus aigu + souffle filtré, volume = pression
+  whistle=ac.createOscillator();whistle.type="sine";whistleG=ac.createGain();whistleG.gain.value=0;whistle.connect(whistleG).connect(fxBus);whistle.start();
+  const wn=ac.createBufferSource();wn.buffer=noiseBuf;wn.loop=true;whooshF=ac.createBiquadFilter();whooshF.type="bandpass";whooshF.Q.value=2;
+  whooshG=ac.createGain();whooshG.gain.value=0;wn.connect(whooshF).connect(whooshG).connect(fxBus);wn.start();
+  // rugissement d'admission : souffle grave qui suit le régime, surtout en pleine charge
+  const rn=ac.createBufferSource();rn.buffer=noiseBuf;rn.loop=true;roarF=ac.createBiquadFilter();roarF.type="bandpass";roarF.Q.value=1.4;
+  roarG=ac.createGain();roarG.gain.value=0;rn.connect(roarF).connect(roarG).connect(pre);rn.start(.1);
+  buildDefaultBank();startVoices();updateShaper();
+}
+let fxBus,noiseBuf,whistle,whistleG,whooshF,whooshG,pre,roarF,roarG;
+const fxS={psh:null,flutter:null,pop:[]}; // effets importés (communs à tous les moteurs)
+function updateShaper(){if(shaper)shaper.curve=makeCurve(P.drive*(.5+$("aggr").value/100))}
+
+/* Pétarade = détonation étouffée par la ligne d'échappement : impact grave + claquement court dans les médiums.
+   s = force (0..1). La plupart sont petites ; de temps en temps une plus grosse. */
+function pop(t,s){
+  if(fxS.pop.length){const b=fxS.pop[Math.floor(Math.random()*fxS.pop.length)],src=ac.createBufferSource(),gg=ac.createGain();
+    src.buffer=b;src.playbackRate.value=.88+Math.random()*.24;gg.gain.value=s*1.3;src.connect(gg).connect(fxBus);src.start(t);return}
+  const o=ac.createOscillator(),og=ac.createGain();o.frequency.setValueAtTime(70+Math.random()*70,t);o.frequency.exponentialRampToValueAtTime(35,t+.07);
+  og.gain.setValueAtTime(0,t);og.gain.linearRampToValueAtTime(s*1.1,t+.002);og.gain.exponentialRampToValueAtTime(.001,t+.09+s*.06);
+  o.connect(og).connect(fxBus);o.start(t);o.stop(t+.2);
+  const n=ac.createBufferSource(),f=ac.createBiquadFilter(),ng=ac.createGain();n.buffer=noiseBuf;
+  f.type="bandpass";f.frequency.value=380+Math.random()*1100+s*600;f.Q.value=.9;
+  const dur=.012+Math.random()*.03+s*.04;ng.gain.setValueAtTime(s*2.6,t);ng.gain.exponentialRampToValueAtTime(.001,t+dur);
+  n.connect(f).connect(ng).connect(fxBus);n.start(t,Math.random()*1.5);n.stop(t+dur+.02);
+}
+function popAt(delay,s){if(ac&&S.running)pop(ac.currentTime+.005+delay,s)}
+const crkLvl=()=>$("crk").value/100*P.crk;
+const popSize=()=>Math.random()<.12?.8+Math.random()*.2:.18+Math.random()*.32;
+
+/* Dump valve : la soupape relâche la pression du turbo au lever de pied.
+   Pschitt = soupape à l'air libre ; flutter = pas de soupape, l'air repart par à-coups à travers le compresseur. */
+function dvKind(){const v=$("dv").value;return v==="auto"?(P.dv||"psh"):v}
+function dumpValve(boost){
+  const kind=dvKind();if(kind==="none"||!ac)return;
+  const t=ac.currentTime+.01,n=ac.createBufferSource(),f=ac.createBiquadFilter(),g=ac.createGain();n.buffer=noiseBuf;
+  // enregistrement importé : prioritaire sur la synthèse
+  const smp=fxS[kind];
+  if(smp){const s=ac.createBufferSource(),gg=ac.createGain();s.buffer=smp;s.playbackRate.value=.92+boost*.14+Math.random()*.04;
+    gg.gain.value=.45+boost*.9;s.connect(gg).connect(fxBus);s.start(t);return}
+  if(kind==="psh"){
+    // pschhh : claquement d'ouverture, souffle large et brillant avec la résonance de la soupape qui descend,
+    // turbulence irrégulière, et un bref chuintement de turbine
+    const amp=1.3+boost*2.4,len=.3+boost*.55,hold=.03+boost*.06,end=t+len*2.4;
+    const hp=ac.createBiquadFilter();hp.type="highpass";hp.frequency.value=1700;
+    const pk=ac.createBiquadFilter();pk.type="peaking";pk.Q.value=2.2;pk.gain.value=9;
+    pk.frequency.setValueAtTime(5400+boost*1400,t);pk.frequency.exponentialRampToValueAtTime(2600,t+len*1.2);
+    f.type="lowpass";f.Q.value=.5;f.frequency.setValueAtTime(13000,t);f.frequency.exponentialRampToValueAtTime(3200,t+len*1.5);
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(amp,t+.003);g.gain.setValueAtTime(amp,t+hold);g.gain.setTargetAtTime(0,t+hold,len/3.3);
+    const tb=ac.createBufferSource(),tl=ac.createBiquadFilter(),td=ac.createGain();tb.buffer=noiseBuf;tl.type="lowpass";tl.frequency.value=45;td.gain.value=amp*5;
+    tb.connect(tl).connect(td).connect(g.gain);
+    n.connect(hp).connect(pk).connect(f).connect(g).connect(fxBus);
+    const w=ac.createOscillator(),wg=ac.createGain();w.frequency.setValueAtTime(7200+boost*1500,t);w.frequency.exponentialRampToValueAtTime(3400,t+len);
+    wg.gain.setValueAtTime(0,t);wg.gain.linearRampToValueAtTime(.045*amp,t+.006);wg.gain.setTargetAtTime(0,t+.02,len/5);w.connect(wg).connect(fxBus);
+    const cl=ac.createBufferSource(),cf=ac.createBiquadFilter(),cg=ac.createGain();cl.buffer=noiseBuf;cf.type="highpass";cf.frequency.value=2500;
+    cg.gain.setValueAtTime(amp*1.1,t);cg.gain.exponentialRampToValueAtTime(.001,t+.014);cl.connect(cf).connect(cg).connect(fxBus);
+    n.start(t,Math.random());tb.start(t,Math.random());cl.start(t,Math.random());w.start(t);
+    for(const s of[n,tb,cl,w])s.stop(end);
+  }else{
+    // flutter : l'air repart par vagues dans la turbine qui ralentit.
+    // Une modulation douce (pas des clics) hache trois couches : souffle aigu, sifflement de turbine qui descend, petit souffle grave.
+    const amp=1.8+boost*2.6,len=.6+boost*.6,end=t+len*1.7;
+    const env=ac.createGain();env.gain.setValueAtTime(0,t);env.gain.linearRampToValueAtTime(amp,t+.025);env.gain.setTargetAtTime(0,t+.12,len/2.6);
+    const am=ac.createGain();am.gain.value=0;
+    const lfo=ac.createOscillator();lfo.frequency.setValueAtTime(17+boost*7,t);lfo.frequency.exponentialRampToValueAtTime(7,t+len*1.3);
+    const sh=ac.createWaveShaper(),cv=new Float32Array(256);
+    for(let i=0;i<256;i++){const x=i/255*2-1;cv[i]=x>-.15?Math.pow((x+.15)/1.15,1.8):0}sh.curve=cv;
+    lfo.connect(sh).connect(am.gain);
+    // rythme légèrement irrégulier : l'air ne repart jamais de façon parfaitement régulière
+    const jn=ac.createBufferSource(),jl=ac.createBiquadFilter(),jg=ac.createGain();jn.buffer=noiseBuf;jl.type="lowpass";jl.frequency.value=12;jg.gain.value=60;
+    jn.connect(jl).connect(jg).connect(lfo.frequency);jn.start(t,Math.random());jn.stop(t+len*1.7);
+    // souffle d'air
+    const hp=ac.createBiquadFilter();hp.type="highpass";hp.frequency.value=700;
+    f.type="bandpass";f.Q.value=.6;f.frequency.setValueAtTime(2900,t);f.frequency.exponentialRampToValueAtTime(1300,t+len);
+    n.connect(hp).connect(f).connect(am);
+    // sifflement de turbine qui ralentit
+    const w=ac.createOscillator(),wg=ac.createGain();w.frequency.setValueAtTime(3600+boost*2400,t);w.frequency.exponentialRampToValueAtTime(1400,t+len*1.3);
+    wg.gain.value=.2;w.connect(wg).connect(am);
+    // souffle grave
+    const n2=ac.createBufferSource(),lo=ac.createBiquadFilter(),lg=ac.createGain();n2.buffer=noiseBuf;lo.type="lowpass";lo.frequency.value=320;lg.gain.value=.6;
+    n2.connect(lo).connect(lg).connect(am);
+    am.connect(env).connect(fxBus);
+    for(const s of[n,n2])s.start(t,Math.random());w.start(t);lfo.start(t);
+    for(const s of[n,n2,w,lfo])s.stop(end);
+  }
+}
+const turboOn=()=>{const v=$("turbo").value;return v==="auto"?!!P.turbo:v==="on"};
+
+function mixVoices(){
+  const t=ac.currentTime,list=k=>voices.filter(v=>v.kind===k);
+  const vol=$("vol").value/100*(S.running?1:0);
+  // le moteur gonfle quand on écrase la pédale, et s'efface un peu au lever de pied
+  master.gain.setTargetAtTime(vol*(.62+.45*S.load+.45*S.kick),t,.03);
+  lp.frequency.setTargetAtTime(P.lp+S.load*6000+S.kick*6000+S.rpm*.6,t,.025);
+  pre.gain.setTargetAtTime(.8+.9*S.load*S.load+1.1*S.kick,t,.03);
+  const rr=S.rpm/CAR.redline;roarF.frequency.setTargetAtTime(160+S.rpm*.11,t,.04);
+  roarG.gain.setTargetAtTime(S.load*S.load*(.15+.35*rr)+S.kick*.35,t,.04);
+  fxBus.gain.setTargetAtTime(vol,t,.05);
+  // sifflement : turbo = pression ; compresseur volumétrique = suit le régime
+  const sc=P.sc?Math.min(1,S.rpm/CAR.limiter)*(.3+S.load*.7):0,b=S.boost;
+  whistle.frequency.setTargetAtTime(P.sc?1800+S.rpm*.9:2600+b*5200,t,.05);
+  whistleG.gain.setTargetAtTime((b*S.load*.08)+(sc*.06),t,.05);
+  whooshF.frequency.setTargetAtTime(1500+b*2500,t,.05);whooshG.gain.setTargetAtTime(b*S.load*.3,t,.05);
+  const loadMix=S.load; // 0 = off, 1 = on
+  for(const kind of["on","off"]){
+    const vs=list(kind),kw=kind==="on"?Math.sqrt(loadMix):Math.sqrt(1-loadMix);
+    let i=vs.findIndex(v=>v.rpm>=S.rpm);if(i<=0)i=i===0?1:vs.length-1;
+    const a=vs[i-1],b=vs[i],x=Math.min(1,Math.max(0,(S.rpm-a.rpm)/(b.rpm-a.rpm)));
+    for(const v of vs){
+      let w=0;if(v===a)w=Math.cos(x*Math.PI/2);if(v===b)w=Math.sin(x*Math.PI/2);
+      if(S.rpm<vs[0].rpm&&v===vs[0])w=1;
+      v.g.gain.setTargetAtTime(w*kw*(kind==="on"?1:.7),t,.03);
+      v.src.playbackRate.setTargetAtTime(Math.max(.3,S.rpm/v.rpm),t,.015);
+      v.live=w>.15&&kw>.15;
+    }
+  }
+}
+
+/* ---------- simulation ---------- */
+function shift(dir){const g=S.gear+dir;if(g<0||g>=CAR.gears.length)return;
+  // passage montant à fond : coupure d'allumage → parfois une détonation sèche
+  if(dir>0&&S.load>.7&&S.running){const c=crkLvl();if(Math.random()<c*.7)popAt(.02,.45+Math.random()*.35);
+    // le papillon se ferme pendant le passage : la soupape relâche une partie de la pression, le turbo regonfle ensuite
+    if(turboOn()&&S.boost>.3){dumpValve(S.boost*.75);S.boost*=.35;S.dvCool=.35}}
+  S.gear=g;S.shiftT=.16}
+function step(dt){
+  const aggr=$("aggr").value/100,manual=$("box").value==="manual";
+  const thrPrev=S.throttle;
+  if(S.src==="test"){
+    // pédale : on écrase vite, on relâche encore plus vite
+    const tgt=S.gas?1:0;S.throttle+=(tgt-S.throttle)*Math.min(1,dt*(tgt>S.throttle?12:18));
+    const ratio=CAR.gears[S.gear]/CAR.gears[0];
+    // frein moteur : plus fort à haut régime et sur les rapports courts ; résistance au roulement + air
+    const engBrake=S.speed>1&&S.shiftT<=0?(1-S.throttle)*(.5+2.4*S.rpm/CAR.redline)*Math.pow(ratio,.6):0;
+    let a=S.throttle*P.power*Math.pow(.84,S.gear)*(S.shiftT>0?.15:1)-(S.brake?9:0)-engBrake-(S.speed>.1?.15:0)-S.speed*S.speed*.0004;
+    if(S.brake&&S.speed<.3){a=0;S.speed=0}
+    if(S.rpm>=CAR.limiter&&a>0)a=0;
+    S.speed=Math.max(0,S.speed+a*dt);S.acc=a;
+  }else{
+    const g=S.gps;g.v+=(g.target-g.v||0)*Math.min(1,dt*2.5);
+    const prev=S.speed;S.speed=Math.max(0,g.v);S.acc=S.acc+((S.speed-prev)/dt-S.acc)*Math.min(1,dt*3);
+    S.throttle=Math.min(1,Math.max(0,S.acc/(2.5-aggr*1.5)));
+  }
+  // coup de pédale franc : petit sursaut de son et de régime (la transmission encaisse)
+  const dThr=(S.throttle-thrPrev)/dt;
+  if(dThr>1.5)S.kick=Math.min(1,S.kick+dThr*dt*1.3);
+  S.kick*=Math.exp(-dt*2.6);
+  // régime
+  const wheelRpm=rpmFor(S.speed,S.gear),freeRev=S.speed<.5&&S.gear===0&&(S.src!=="test"||S.brake||!S.gas);
+  if(freeRev){
+    // à vide : le moteur prend ses tours très vite et les perd vite (inertie du volant moteur)
+    const tgt=CAR.idle+S.throttle*(CAR.limiter-CAR.idle),up=CAR.redline*1.9,down=CAR.redline*.75;
+    if(tgt>S.rpm)S.rpm=Math.min(tgt,S.rpm+(up*S.throttle+(tgt-S.rpm)*2)*dt);
+    else S.rpm=Math.max(tgt,S.rpm-(down*(.35+S.rpm/CAR.limiter)+(S.rpm-tgt)*1.5)*dt);
+  }else{
+    let target=Math.max(CAR.idle,wheelRpm+S.kick*450*S.throttle);
+    // démarrage : l'embrayage patine, le régime monte avant que les roues ne rattrapent
+    if(S.gear===0)target=Math.max(target,CAR.idle+S.throttle*CAR.redline*(.35+$("aggr").value/100*.2));
+    if(S.shiftT>0){S.shiftT-=dt;target=Math.max(CAR.idle,wheelRpm*.98)}
+    S.rpm+=(target-S.rpm)*Math.min(1,dt*16);
+  }
+  // rupteur
+  S.limiterT-=dt;if(S.rpm>CAR.limiter-30&&S.throttle>.5&&S.limiterT<=0){S.rpm-=380;S.limiterT=.07;
+    if(Math.random()<crkLvl()*.25)popAt(.01,popSize())}
+  // boîte auto
+  if(!manual){
+    const up=CAR.redline*(.6+aggr*.37),down=CAR.redline*(.2+aggr*.18);
+    if(S.rpm>up&&S.gear<CAR.gears.length-1&&S.speed>1)shift(1);
+    else if(S.gear>0&&rpmFor(S.speed,S.gear)<down)shift(-1);
+  }
+  // charge : suit l'accélérateur, chute pendant le passage de rapport
+  const tgtLoad=S.shiftT>0?0:S.throttle;S.load+=(tgtLoad-S.load)*Math.min(1,dt*(tgtLoad>S.load?12:16));
+  // turbo : la pression monte avec charge et régime ; au lever de pied elle reste piégée jusqu'à la soupape
+  if(turboOn()){
+    if(S.throttle>.3){const spool=P.spool||3000,k=Math.min(1,Math.max(0,(S.rpm-spool*.6)/(spool*.8))),tgt=S.throttle*k;
+      S.boost+=(tgt-S.boost)*Math.min(1,dt*(tgt>S.boost?1.8:3))}
+    else S.boost=Math.max(0,S.boost-dt*.8);
+  }else S.boost=0;
+  // lever de pied
+  const c=crkLvl();
+  // dump valve : chaque fois que la pédale retombe nettement avec de la pression (lever complet ou partiel)
+  S.dvCool-=dt;S.thrRef=Math.max(S.throttle,S.thrRef-dt*1.2);
+  if(turboOn()&&S.running&&S.dvCool<=0&&S.boost>.18&&S.thrRef-S.throttle>.35){
+    dumpValve(S.boost*Math.min(1,.5+(S.thrRef-S.throttle)*(S.throttle<.3?1.5:.8)));S.boost*=S.throttle>.25?.4:0;S.dvCool=.4;S.thrRef=S.throttle}
+  // lever de pied complet : pétarade possible
+  if(S.throttle>.6)S.armed=true;
+  if(S.armed&&S.throttle<.3){S.armed=false;S.liftT=0;
+    if(S.running&&S.rpm>CAR.redline*.4&&Math.random()<c*.8)popAt(.06+Math.random()*.12,popSize());
+  }
+  S.liftT+=dt;
+  // frein moteur : crépitements irréguliers, surtout juste après le lever de pied, qui s'éteignent avec le régime
+  if(S.running&&S.throttle<.1&&S.rpm>CAR.redline*.32){
+    const rate=c*(1.2+5*Math.exp(-S.liftT/.9))*(S.rpm/CAR.redline);
+    if(Math.random()<dt*rate)popAt(0,popSize()*(.6+.4*Math.exp(-S.liftT/1.5)));
+  }
+}
+
+/* ---------- GPS ---------- */
+function startGps(){
+  if(!navigator.geolocation){say("Ce navigateur ne donne pas accès à la position.");return false}
+  S.gps.target=0;S.gps.v=S.speed;
+  S.gps.watch=navigator.geolocation.watchPosition(p=>{
+    let v=p.coords.speed;const L=S.gps.last;
+    if((v==null||isNaN(v))&&L){const dt=(p.timestamp-L.t)/1000;if(dt>0)v=hav(L.c,p.coords)/dt}
+    S.gps.last={t:p.timestamp,c:p.coords};if(v!=null&&!isNaN(v))S.gps.target=v;say("");
+  },e=>say("Position refusée ou indisponible ("+e.message+"). Sur une vraie page, autorise la localisation."),{enableHighAccuracy:true,maximumAge:0});
+  return true;
+}
+function hav(a,b){const R=6371e3,r=x=>x*Math.PI/180,dl=r(b.latitude-a.latitude),dn=r(b.longitude-a.longitude);
+  const h=Math.sin(dl/2)**2+Math.cos(r(a.latitude))*Math.cos(r(b.latitude))*Math.sin(dn/2)**2;return 2*R*Math.asin(Math.sqrt(h))}
+
+/* ---------- interface ---------- */
+function say(t){$("msg").textContent=t}
+const cv=$("tach"),cx=cv.getContext("2d");
+function drawTach(){
+  const W=cv.width,H=cv.height,x0=W/2,y0=H*.86,R=W*.44,a0=Math.PI*1.05,a1=Math.PI*1.95,kMax=Math.ceil(CAR.limiter/1000),max=kMax*1000;
+  const ang=r=>a0+(a1-a0)*Math.min(r,max)/max,css=getComputedStyle(document.documentElement),c=n=>css.getPropertyValue(n).trim();
+  cx.clearRect(0,0,W,H);cx.lineCap="butt";
+  cx.lineWidth=22;cx.strokeStyle=c("--line");cx.beginPath();cx.arc(x0,y0,R,a0,a1);cx.stroke();
+  cx.strokeStyle=c("--red");cx.beginPath();cx.arc(x0,y0,R,ang(CAR.redline),a1);cx.stroke();
+  cx.strokeStyle=c("--amber");cx.beginPath();cx.arc(x0,y0,R,a0,ang(S.rpm));cx.stroke();
+  cx.fillStyle=c("--muted");cx.font="500 30px "+c("--mono");cx.textAlign="center";cx.textBaseline="middle";
+  for(let k=0;k<=kMax;k++){const a=ang(k*1000);cx.fillText(k,x0+Math.cos(a)*(R-62),y0+Math.sin(a)*(R-62));
+    cx.strokeStyle=c("--muted");cx.lineWidth=3;cx.beginPath();cx.moveTo(x0+Math.cos(a)*(R+16),y0+Math.sin(a)*(R+16));cx.lineTo(x0+Math.cos(a)*(R+34),y0+Math.sin(a)*(R+34));cx.stroke()}
+  cx.fillText("×1000 tr/min",x0,y0-R*.62);
+}
+function renderBank(){
+  const b=$("bank");b.innerHTML='<div class="h">tr/min</div><div class="h">En charge</div><div class="h">Pied levé</div>';
+  const all=[...new Set([...Object.keys(bank.on),...Object.keys(bank.off)].map(Number))].sort((a,c)=>a-c);
+  for(const r of all){b.insertAdjacentHTML("beforeend",`<div>${r}</div>`+["on","off"].map(k=>{const s=bank[k][r],v=voices.find(x=>x.kind===k&&x.rpm===r);
+    return `<div class="slot ${s&&s.user?"user":""}" data-k="${k}" data-r="${r}">${s?(s.user?s.name:"générée"):"—"}</div>`}).join(""))}
+  const n=Object.values(bank.on).concat(Object.values(bank.off)).filter(s=>s.user).length;$("bankLbl").textContent=n?n+" importées":"générées";
+}
+function refreshLive(){document.querySelectorAll(".slot").forEach(el=>{const v=voices.find(x=>x.kind===el.dataset.k&&x.rpm==el.dataset.r);el.classList.toggle("live",!!(v&&v.live))})}
+
+let last=performance.now(),frame=0;
+function loop(now){
+  const dt=Math.min(.05,(now-last)/1000);last=now;step(dt);if(ac)mixVoices();
+  $("spd").textContent=Math.round(S.speed*3.6);$("rpmV").textContent=Math.round(S.rpm/10)*10;
+  $("gearV").textContent=S.speed<.5&&S.gear===0&&S.throttle<.05?"N":S.gear+1;
+  $("loadV").textContent=Math.round(S.load*100)+"%";$("accV").textContent=S.acc.toFixed(1);
+  drawTach();if(++frame%6===0)refreshLive();requestAnimationFrame(loop);
+}
+S.rpm=0;requestAnimationFrame(loop);
+
+// iPhone : le Web Audio est coupé par le bouton silencieux, sauf si la session audio passe en « lecture »
+let iosEl=null;
+function unlockIOS(){
+  try{if(navigator.audioSession)navigator.audioSession.type="playback"}catch(e){}
+  if(iosEl)return;
+  try{const sr=8000,n=sr/2,b=new ArrayBuffer(44+n*2),v=new DataView(b),w=(o,s)=>[...s].forEach((c,i)=>v.setUint8(o+i,c.charCodeAt(0)));
+    w(0,"RIFF");v.setUint32(4,36+n*2,true);w(8,"WAVEfmt ");v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,1,true);
+    v.setUint32(24,sr,true);v.setUint32(28,sr*2,true);v.setUint16(32,2,true);v.setUint16(34,16,true);w(36,"data");v.setUint32(40,n*2,true);
+    iosEl=new Audio(URL.createObjectURL(new Blob([b],{type:"audio/wav"})));iosEl.loop=true;iosEl.setAttribute("playsinline","");iosEl.play().catch(()=>{});
+  }catch(e){}
+}
+$("start").onclick=async()=>{
+  unlockIOS();if(!ac)initAudio();await ac.resume();S.running=!S.running;
+  $("start").textContent=S.running?"Couper le moteur":"Démarrer le moteur";
+  if(S.running){S.rpm=1800}else S.rpm=0;
+  try{if(S.running&&navigator.wakeLock)await navigator.wakeLock.request("screen")}catch(e){}
+};
+$("srcBtn").onclick=()=>{
+  if(S.src==="test"){if(!startGps())return;S.src="gps";$("srcBtn").textContent="Revenir au test";$("srcLbl").textContent="GPS"}
+  else{navigator.geolocation.clearWatch(S.gps.watch);S.src="test";$("srcBtn").textContent="Passer en GPS";$("srcLbl").textContent="Test";say("")}
+};
+function hold(el,key){const on=e=>{e.preventDefault();S[key]=true;el.classList.add("down")},off=()=>{S[key]=false;el.classList.remove("down")};
+  el.addEventListener("pointerdown",on);["pointerup","pointerleave","pointercancel"].forEach(t=>el.addEventListener(t,off))}
+hold($("gas"),"gas");hold($("brake"),"brake");
+addEventListener("keydown",e=>{if(e.repeat)return;const k=e.key.toLowerCase();
+  if(k==="w"){S.gas=true;$("gas").classList.add("down")}if(k==="s"){S.brake=true;$("brake").classList.add("down")}
+  if($("box").value==="manual"){if(k==="e")shift(1);if(k==="q")shift(-1)}});
+addEventListener("keyup",e=>{const k=e.key.toLowerCase();if(k==="w"){S.gas=false;$("gas").classList.remove("down")}if(k==="s"){S.brake=false;$("brake").classList.remove("down")}});
+document.querySelectorAll("label.sl input").forEach(i=>i.addEventListener("input",()=>{i.nextElementSibling.value=i.value;if(i.id==="aggr")updateShaper()}));
+
+$("impBtn").onclick=()=>$("imp").click();
+$("imp").onchange=async e=>{
+  if(!ac)initAudio();let ok=0,bad=[];
+  for(const f of e.target.files){const nm=f.name.toLowerCase(),fx=nm.match(/^(pschitt|psh|bov|flutter|pop)/);
+    if(fx){try{const buf=await ac.decodeAudioData(await f.arrayBuffer()),k=fx[1]==="flutter"?"flutter":fx[1]==="pop"?"pop":"psh";
+      if(k==="pop")fxS.pop.push(buf);else fxS[k]=buf;ok++}catch(err){bad.push(f.name)}continue}
+    const m=nm.match(/(on|off)[_\-\s]?(\d{3,5})/);
+    if(!m){bad.push(f.name);continue}
+    try{const buf=await ac.decodeAudioData(await f.arrayBuffer());bank[m[1]][+m[2]]={buf,user:true,name:f.name};ok++}catch(err){bad.push(f.name)}}
+  startVoices();say(ok+" boucle(s) importée(s)."+(bad.length?" Ignorées (nom ou format non reconnu) : "+bad.join(", "):""));e.target.value="";
+};
+$("resetBtn").onclick=()=>{if(!ac)initAudio();buildDefaultBank();startVoices();say("Boucles générées rétablies pour "+P.name+".")};
+/* ---------- choix du moteur ---------- */
+const GROUPS=[...new Set(PROFILES.map(p=>p.group))];let tab="Tous";
+function tags(p){return [p.turbo&&"Turbo",p.sc&&"Compresseur",p.cam&&"VTEC"].filter(Boolean).join(" · ")}
+function renderEngines(){
+  $("tabs").innerHTML=["Tous",...GROUPS].map(g=>`<button class="tab" role="tab" aria-selected="${g===tab}" data-g="${g}">${g}</button>`).join("");
+  const gs=tab==="Tous"?GROUPS:[tab];
+  $("engList").innerHTML=gs.map(g=>(tab==="Tous"?`<div class="grp">${g}</div>`:"")+PROFILES.filter(p=>p.group===g).map(p=>
+    `<button class="eng" data-id="${p.id}" aria-current="${p.id===P.id}">
+      <span class="cyl">${p.layout?"R":p.cyl}<small>${p.layout?"rotors":"cyl"}</small></span>
+      <span class="nm"><b>${p.name}</b><span>${p.sub}</span></span>
+      <span class="rl">${(p.redline/1000).toLocaleString("fr-FR")} k<i>${tags(p)}</i></span></button>`).join("")).join("");
+}
+let lastFocus=null;
+function openSheet(){lastFocus=document.activeElement;renderEngines();$("sheet").hidden=false;
+  const cur=$("engList").querySelector('[aria-current="true"]');(cur||$("sheetClose")).focus();cur&&cur.scrollIntoView({block:"center"})}
+function closeSheet(){$("sheet").hidden=true;lastFocus&&lastFocus.focus()}
+$("engBtn").onclick=openSheet;$("sheetClose").onclick=closeSheet;$("scrim").onclick=closeSheet;
+addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("sheet").hidden)closeSheet()});
+$("tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(b){tab=b.dataset.g;renderEngines()}});
+$("engList").addEventListener("click",e=>{const b=e.target.closest(".eng");if(b){selectProfile(b.dataset.id);closeSheet()}});
+
+/* ---------- sélecteurs segmentés ---------- */
+// le réglage d'origine du moteur est marqué d'un point ; on peut s'en écarter, il revient au changement de moteur
+const engDefaults=p=>({turbo:p.turbo?"on":"off",dv:p.turbo?(p.dv||"psh"):"none"});
+function syncSeg(seg){const k=seg.dataset.for,v=$(k).value,def=P?engDefaults(P)[k]:null;
+  seg.querySelectorAll("button").forEach(b=>{b.setAttribute("aria-pressed",b.dataset.v===v);b.dataset.def=b.dataset.v===def})}
+function syncAll(){document.querySelectorAll(".seg").forEach(syncSeg);
+  const dvSeg=document.querySelector('.seg[data-for="dv"]');if(dvSeg)dvSeg.classList.toggle("off",$("turbo").value!=="on")}
+function applyEngineDefaults(p){const d=engDefaults(p);$("turbo").value=d.turbo;$("dv").value=d.dv;syncAll()}
+document.querySelectorAll(".seg").forEach(seg=>{
+  const k=seg.dataset.for;
+  if(k==="box")try{const sv=localStorage.getItem("bm.box");if(sv&&seg.querySelector(`[data-v="${sv}"]`))$(k).value=sv}catch(e){}
+  syncSeg(seg);
+  seg.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;$(k).value=b.dataset.v;
+    // turbo ajouté sur un moteur atmo : il lui faut une soupape ; dump valve choisie : le turbo s'active
+    if(k==="turbo"&&b.dataset.v==="on"&&$("dv").value==="none")$("dv").value=P.dv||"psh";
+    if(k==="dv"&&b.dataset.v!=="none"&&$("turbo").value!=="on")$("turbo").value="on";
+    syncAll();if(k==="box")try{localStorage.setItem("bm.box",b.dataset.v)}catch(err){}});
+});
+let saved=null;try{saved=localStorage.getItem("bm.profile")}catch(e){}
+selectProfile(saved||"muscle");
+</script>

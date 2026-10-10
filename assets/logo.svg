@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <title>Rupteur</title>
+  <rect width="512" height="512" rx="112" fill="#101318"/>
+  <!-- cadran : 270° ouvert en bas -->
+  <path d="M146.9 365.1 A154 154 0 1 1 365.1 365.1" fill="none" stroke="#262c36" stroke-width="34" stroke-linecap="round"/>
+  <!-- montée en régime -->
+  <path d="M146.9 365.1 A154 154 0 0 1 333 122.6" fill="none" stroke="#f2a33a" stroke-width="34" stroke-linecap="round"/>
+  <!-- zone rouge -->
+  <path d="M389.4 179 A154 154 0 0 1 365.1 365.1" fill="none" stroke="#e5484d" stroke-width="34" stroke-linecap="round"/>
+  <!-- aiguille calée sur le rupteur -->
+  <path d="M256 256 L392 196" stroke="#f2a33a" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="256" cy="256" r="34" fill="#f2a33a"/>
+  <circle cx="256" cy="256" r="12" fill="#101318"/>
+</svg>
